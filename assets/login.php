@@ -1,4 +1,8 @@
 <?php
+session_start();
+?>
+
+<?php
 	$uname = "";
 	$pword = "";
 	$errorMessage = "";
@@ -7,20 +11,21 @@
 		$uname = htmlspecialchars($_POST['username']);
 		$pword = htmlspecialchars($_POST['password']);
 		$pword = md5($pword);
-		$result = false;
+		$loginSuccess = false;
 		if($uname == 'steffen.haertlein@gmx.de'){
-			$result = true;
+			$loginSuccess = true;
 		}
 		else {
 			$errorMessage = 'Unknown User';
 		}
-		if($result){
-			header("Location: ../");
+		if($loginSuccess){
+			$_SESSION['username'] = $uname;
+			header("Location: members.php");
 			exit;
 		}
 		else {
 			$errorMessage=htmlspecialchars($errorMessage);
-			header("Location: login.html?err=$errorMessage");
+			header("Location: ../index.php?err=$errorMessage");
 			exit;
 		}
 	}
