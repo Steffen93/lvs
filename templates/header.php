@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php echo $this->_['title']; ?></title>
-	<link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
-	<link rel='stylesheet' type='text/css' href='styles/home.css'>
-</head>
-<body>
+<?php
+  session_start();
+?>
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills pull-right">
+      <?php 
+        if(isset($_SESSION['username'])){
+          echo $this->_['logoutForm'];
+        }
+        else {
+          echo $this->_['loginForm'];
+        }
+      ?>
+    </nav>
+    <h3 class="text-muted"><a href="?v=home"><?php echo $this->_['appName']; ?></a></h3>
+  </div>
+  <div id="errPanel" class="panel panel-danger" style="display:none;">
+    <div class="panel-heading">
+      <h3 class="panel-title">Fehler</h3>
+    </div>
+    <div id="errMessage" class="panel-body" >
+    </div>
+  </div>

@@ -20,12 +20,12 @@ session_start();
 		}
 		if($loginSuccess){
 			$_SESSION['username'] = $uname;
-			header("Location: members.php");
+			header("Location: ../?v=members");
 			exit;
 		}
 		else {
 			$errorMessage=htmlspecialchars($errorMessage);
-			header("Location: ../index.php?err=$errorMessage");
+			header("Location: ../?v=login&err=$errorMessage");
 			exit;
 		}
 	}

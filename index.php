@@ -3,6 +3,7 @@
 // unsere Klassen einbinden
 include('classes/controller.php');
 include('classes/model.php');
+include('classes/globals.php');
 include('classes/view.php');
 
 // $_GET und $_POST zusammenfasen, $_COOKIE interessiert uns nicht.

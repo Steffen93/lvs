@@ -1,20 +1,12 @@
-<?php echo $this->_['header']; ?>
+<?php echo $this->_['htmlHeader']; ?>
 <div class="container">
-  <div class="header clearfix">
-    <nav>
-      <ul class="nav nav-pills pull-right">
-        <li role="presentation" class="active"><a href="?view=home">Home</a></li>
-        <li role="presentation"><a href="#">About</a></li>
-        <li role="presentation"><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-    <h3 class="text-muted"><?php echo $this->_['appName']; ?></h3>
-  </div>
+
+<?php echo $this->_['header']; ?>
 
   <div class="jumbotron">
     <h1>Jumbotron heading</h1>
     <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    <p><a class="btn btn-lg btn-success" href="?view=entry&id=1" role="button">Sign up today</a></p>
+    <p><a class="btn btn-lg btn-success" href="?v=register" role="button">Sign up today</a></p>
   </div>
 
   <div class="row marketing">
@@ -41,9 +33,6 @@
     </div>
   </div>
 
-  <footer class="footer">
-    <p>&copy; 2015 Company, Inc.</p>
-  </footer>
-
+<?php echo $this->_['footer']; ?>
 </div> <!-- /container -->
-<?php echo $this->_['footer'] ?>
+<?php echo $this->_['htmlFooter'] ?>

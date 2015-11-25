@@ -3,9 +3,6 @@
  * Klasse für den Datenzugriff
  */
 class Model{
-	public static $APP_NAME_LONG = "Lehrgang Verwaltungs System";
-	public static $APP_NAME_SHORT = "LVS";
-	public static $APP_TITLE = "LVS - Lehrgänge verwalten";
 	//Einträge eines Blogs als zweidimensionales Array
 	private static $entries = array(
 		array("id"=>0, "title"=>"Eintrag 1", "content"=>"Ich bin der erste Eintrag."),
