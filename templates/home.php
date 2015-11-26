@@ -4,11 +4,11 @@
 <?php echo $this->_['header']; ?>
 
   <div class="jumbotron">
-    <h1>Jumbotron heading</h1>
-    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    <p><a class="btn btn-lg btn-success" href="?v=register" role="button">Sign up today</a></p>
+    <h1><?php echo $this->_['appName'];?></h1>
+    <p class="lead"><?php echo $this->_['appDescription'];?></p>
+    <p><a class="btn btn-lg btn-success" href="?v=register" role="button">Hier registrieren</a></p>
   </div>
-
+<!--
   <div class="row marketing">
     <div class="col-lg-6">
       <h4>Subheading</h4>
@@ -32,7 +32,7 @@
       <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
     </div>
   </div>
-
+-->
 <?php echo $this->_['footer']; ?>
 </div> <!-- /container -->
 <?php echo $this->_['htmlFooter'] ?>

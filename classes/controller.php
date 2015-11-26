@@ -80,6 +80,8 @@ class Controller{
 			default:
 				$entries = Model::getEntries();
 				$body->setTemplate();
+				$body->assign('appName', Globals::$APP_NAME_LONG);
+				$body->assign('appDescription', Globals::$APP_DESCRIPTION);
 		}
 		return $body;
 	}
