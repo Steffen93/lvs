@@ -5,33 +5,29 @@
 class Model{
 	//Einträge eines Blogs als zweidimensionales Array
 	private static $users = array(
-		array("id"=>0, "name"=>"User 1", "content"=>"Ich bin der erste Eintrag."),
-		array("id"=>1, "name"=>"User 2", "content"=>"Ich bin der ewige Zweite!"),
-		array("id"=>2, "name"=>"User 3", "content"=>"Na dann bin ich die Nummer drei.")
+		array("Id"=>0, "Name"=>"User 1", "Feuerwehr"=>"FW Schmeilsdorf"),
+		array("Id"=>1, "Name"=>"User 2", "Feuerwehr"=>"FW Schmeilsdorf"),
+		array("Id"=>2, "Name"=>"User 3", "Feuerwehr"=>"FW Schmeilsdorf")
 	);
 
+	private static $userListColumns = array("Id", "Name", "Feuerwehr");
+
 	/**
-	 * Gibt alle Einträge des Blogs zurück.
+	 * Gibt alle Spaltennamen für die Benutzerliste zurück.
 	 *
-	 * @return Array Array von Blogeinträgen.
+	 * @return Array Array von Spaltennamen.
 	 */
-	public static function getUsers(){
-		return self::$users;
+	public static function getUserListColumns(){
+		return self::$userListColumns;
 	}
 
 	/**
-	 * Gibt einen bestimmten Eintrag zurück.
+	 * Gibt alle Benutzer zurück.
 	 *
-	 * @param int $id Id des gesuchten Eintrags
-	 * @return Array Array, dass einen Eintrag repräsentiert, bzw. 
-	 * 					wenn dieser nicht vorhanden ist, null.
+	 * @return 2D Array von Benutzern und ihren Eigenschaften.
 	 */
-	public static function getUser($id){
-		if(array_key_exists($id, self::$users)){
-			return self::$users[$id];
-		}else{
-			return null;
-		}
+	public static function getUsers(){
+		return self::$users;
 	}
 }
 ?>

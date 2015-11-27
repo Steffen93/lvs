@@ -61,6 +61,12 @@ class Controller{
 		return $view;
 	}
 
+	private function initMemberNav(){
+		$view = new View();
+		$view->setTemplate('membernav');
+		return $view;
+	}
+
 	private function initBody(){
 		$body = new View();
 		switch($this->template){
@@ -70,6 +76,7 @@ class Controller{
 			
 			case 'members':
 				$body->setTemplate('members');
+				$body->assign('membernav', $this->initMemberNav()->loadTemplate());
 				break;
 
 			case 'login':
@@ -78,8 +85,10 @@ class Controller{
 
 			case 'userlist':
 				$users = Model::getUsers();
+				$columns = Model::getUserListColumns();
 				$body->setTemplate('userlist');
 				$body->assign('users', $users);
+				$body->assign('columns', $columns);
 				break;
 
 			case 'home':
@@ -102,6 +111,7 @@ class Controller{
 	private function initHtmlFooter(){
 		$htmlFooter = new View();
 		$htmlFooter->setTemplate('htmlfooter');
+		$htmlFooter->assign('bootstrapVersion', Globals::$BOOTSTRAP_VERSION);
 		return $htmlFooter;
 	}
 }

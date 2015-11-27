@@ -14,38 +14,29 @@
 <table class="table table-hover"> 
 	<thead> 
 		<tr> 
-			<th>#</th> 
-			<th>First Name</th> 
-			<th>Last Name</th>
-			<th>Username</th>
+			<?php 
+				foreach ($this->_['columns'] as $col) {
+					echo "<th>$col</th>";
+				}
+			?>
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<th scope="row">1</th>
-			<td>Mark</td>
-			<td>Otto</td>
-			<td>@mdo</td>
-		</tr>
-		<tr>
-			<th scope="row">2</th>
-			<td>Jacob</td>
-			<td>Thornton</td>
-			<td>@fat</td>
-		</tr>
-		<tr>
-		<th scope="row">3</th>
-		<td>Larry</td>
-		<td>the Bird</td>
-		<td>@twitter</td>
-		</tr>
+		<?php
+			foreach ($this->_['users'] as $user) {
+				echo "<tr>";
+				foreach ($this->_['columns'] as $key) {
+					$output = "Spalte nicht gefunden";
+					if (array_key_exists($key, $user)){
+						$output = $user[$key];
+					}
+					echo "<td>$output</td>";
+				}
+				echo "</tr>";
+			}
+		?>
 	</tbody>
 </table>
-<?php 
-	foreach ($this->_['users'] as $user) {
-		echo $user['content'];
-	}
- ?>
 
 <?php echo $this->_['footer']; ?>
 </div> <!-- /container -->

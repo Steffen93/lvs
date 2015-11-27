@@ -16,5 +16,7 @@
 		document.getElementById("errPanel").style.display = "block";
 	}
 </script>
+<script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/<?php echo $this->_['bootstrapVersion']; ?>/js/bootstrap.min.js'></script>
 </body>
 </html>

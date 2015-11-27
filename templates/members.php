@@ -11,6 +11,10 @@
 
 <?php echo $this->_['header']; ?>
 
+<?php 
+	echo $this->_['membernav'];
+?>
+
 <?php echo "Hello World, " . $_SESSION['username'];?>
 
 <?php echo $this->_['footer']; ?>
