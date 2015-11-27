@@ -19,4 +19,5 @@
 
 <?php echo $this->_['footer']; ?>
 </div> <!-- /container -->
+<?php echo $this->_['bootstrapjs'] ?>
 <?php echo $this->_['htmlFooter'] ?>

@@ -28,6 +28,7 @@ class Controller{
 		$this->view->assign('htmlHeader', $this->initHtmlHeader()->loadTemplate());
 		$this->view->assign('header', $this->initHeader()->loadTemplate());
 		$this->view->assign('footer', $this->initFooter()->loadTemplate());
+		$this->view->assign('bootstrapjs', $this->initBootstrapJs()->loadTemplate());
 		$this->view->assign('htmlFooter', $this->initHtmlFooter()->loadTemplate());
 		return $this->view->loadTemplate();
 	}
@@ -108,10 +109,17 @@ class Controller{
 		return $footer;
 	}
 
+	private function initBootstrapJs(){
+		$view = new View();
+		$view->setTemplate('bootstrapjs');
+		$view->assign('bootstrapVersion', Globals::$BOOTSTRAP_VERSION);
+		$view->assign('jQueryVersion', Globals::$JQUERY_VERSION);
+		return $view;
+	}
+
 	private function initHtmlFooter(){
 		$htmlFooter = new View();
 		$htmlFooter->setTemplate('htmlfooter');
-		$htmlFooter->assign('bootstrapVersion', Globals::$BOOTSTRAP_VERSION);
 		return $htmlFooter;
 	}
 }
