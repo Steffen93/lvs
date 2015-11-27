@@ -4,10 +4,10 @@
  */
 class Model{
 	//Einträge eines Blogs als zweidimensionales Array
-	private static $entries = array(
-		array("id"=>0, "title"=>"Eintrag 1", "content"=>"Ich bin der erste Eintrag."),
-		array("id"=>1, "title"=>"Eintrag 2", "content"=>"Ich bin der ewige Zweite!"),
-		array("id"=>2, "title"=>"Eintrag 3", "content"=>"Na dann bin ich die Nummer drei.")
+	private static $users = array(
+		array("id"=>0, "name"=>"User 1", "content"=>"Ich bin der erste Eintrag."),
+		array("id"=>1, "name"=>"User 2", "content"=>"Ich bin der ewige Zweite!"),
+		array("id"=>2, "name"=>"User 3", "content"=>"Na dann bin ich die Nummer drei.")
 	);
 
 	/**
@@ -15,8 +15,8 @@ class Model{
 	 *
 	 * @return Array Array von Blogeinträgen.
 	 */
-	public static function getEntries(){
-		return self::$entries;
+	public static function getUsers(){
+		return self::$users;
 	}
 
 	/**
@@ -26,9 +26,9 @@ class Model{
 	 * @return Array Array, dass einen Eintrag repräsentiert, bzw. 
 	 * 					wenn dieser nicht vorhanden ist, null.
 	 */
-	public static function getEntry($id){
-		if(array_key_exists($id, self::$entries)){
-			return self::$entries[$id];
+	public static function getUser($id){
+		if(array_key_exists($id, self::$users)){
+			return self::$users[$id];
 		}else{
 			return null;
 		}

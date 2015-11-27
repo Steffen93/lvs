@@ -76,9 +76,14 @@ class Controller{
 				$body->setTemplate('login');
 				break;
 
+			case 'userlist':
+				$users = Model::getUsers();
+				$body->setTemplate('userlist');
+				$body->assign('users', $users);
+				break;
+
 			case 'home':
 			default:
-				$entries = Model::getEntries();
 				$body->setTemplate();
 				$body->assign('appName', Globals::$APP_NAME_LONG);
 				$body->assign('appDescription', Globals::$APP_DESCRIPTION);
