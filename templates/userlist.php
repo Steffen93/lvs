@@ -11,6 +11,8 @@
 
 <?php echo $this->_['header']; ?>
 
+<?php echo $this->_['membernav']; ?>
+
 <table class="table table-hover"> 
 	<thead> 
 		<tr> 
@@ -39,5 +41,9 @@
 </table>
 
 <?php echo $this->_['footer']; ?>
+
 </div> <!-- /container -->
-<?php echo $this->_['htmlFooter'] ?>
+
+<?php echo $this->_['bootstrapjs']; ?>
+
+<?php echo $this->_['htmlFooter']; ?>

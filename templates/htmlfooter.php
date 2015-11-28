@@ -1,3 +1,4 @@
+<!--TODO: error Message Teil auslagern und als Variable importieren, nur nutzen falls nötig (login Seite etc.)-->
 <script type="text/javascript">
 	function getQueryVariable(variable)
 	{

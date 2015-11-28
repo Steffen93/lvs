@@ -63,8 +63,10 @@ class Controller{
 	}
 
 	private function initMemberNav(){
+		$settingCategories = Model::getSettingCategories();
 		$view = new View();
 		$view->setTemplate('membernav');
+		$view->assign('settingCategories', $settingCategories);
 		return $view;
 	}
 
@@ -90,6 +92,7 @@ class Controller{
 				$body->setTemplate('userlist');
 				$body->assign('users', $users);
 				$body->assign('columns', $columns);
+				$body->assign('membernav', $this->initMemberNav()->loadTemplate());
 				break;
 
 			case 'home':

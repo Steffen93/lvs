@@ -10,6 +10,15 @@ class Model{
 		array("Id"=>2, "Name"=>"User 3", "Feuerwehr"=>"FW Schmeilsdorf")
 	);
 
+	/**
+	 * Gibt alle Benutzer zurück.
+	 *
+	 * @return 2D Array von Benutzern und ihren Eigenschaften.
+	 */
+	public static function getUsers(){
+		return self::$users;
+	}
+
 	private static $userListColumns = array("Id", "Name", "Feuerwehr");
 
 	/**
@@ -21,13 +30,15 @@ class Model{
 		return self::$userListColumns;
 	}
 
+	private static $settingCategories = array("Allgemein", "Benutzer");
+
 	/**
-	 * Gibt alle Benutzer zurück.
+	 * Gibt alle Spaltennamen für die Benutzerliste zurück.
 	 *
-	 * @return 2D Array von Benutzern und ihren Eigenschaften.
+	 * @return Array Array von Spaltennamen.
 	 */
-	public static function getUsers(){
-		return self::$users;
+	public static function getSettingCategories(){
+		return self::$settingCategories;
 	}
 }
 ?>
