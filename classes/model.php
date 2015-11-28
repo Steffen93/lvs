@@ -19,7 +19,7 @@ class Model{
 		return self::$users;
 	}
 
-	private static $userListColumns = array("Id", "Name", "Feuerwehr");
+	private static $userListColumns = ["Id", "Name", "Feuerwehr"];
 
 	/**
 	 * Gibt alle Spaltennamen für die Benutzerliste zurück.
@@ -30,15 +30,18 @@ class Model{
 		return self::$userListColumns;
 	}
 
-	private static $settingCategories = array("Allgemein", "Benutzer");
+	private static $navigationOptions = [
+		"Lehrgänge" => "members",
+		"Einstellungen" => ["Allgemein" => "generalSettings", "Benutzer" => "userlist"]
+	];
 
 	/**
 	 * Gibt alle Spaltennamen für die Benutzerliste zurück.
 	 *
 	 * @return Array Array von Spaltennamen.
 	 */
-	public static function getSettingCategories(){
-		return self::$settingCategories;
+	public static function getNavigationOptions(){
+		return self::$navigationOptions;
 	}
 }
 ?>

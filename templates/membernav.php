@@ -1,29 +1,31 @@
-<ul class="nav nav-tabs nav-justified">
-	<li id="members" class="active" role="presentation">
-		<a href="?v=members">Lehrgänge</a>
-	</li>
-	<li id="settings" class="dropdown" role="presentation"> 
-		<a role="button" data-toggle="dropdown" class="dropdown-toggle"> 
-			Einstellungen <span class="caret"></span> 
-		</a> 
-		<ul class="dropdown-menu"> 
-			<li>
-				<a href="#">Allgemein</a>
-			</li> 
-			<li>
-				<a href="?v=userlist">Benutzer</a>
-			</li> 
-		</ul> 
-	</li>
+<ul class="nav nav-pills nav-justified">
+<?php 
+	$active = $this->_['activeNavigation'];
+	foreach ($this->_['navigationOptions'] as $category => $value) {
+		if (is_array($value) && count($value) > 0){
+			echo "<li role='presentation' class='dropdown";
+			if(in_array($active, $value)){
+				echo " active";
+			}
+			echo "'>";
+			echo "<a role='button' data-toggle='dropdown' class='dropdown-toggle'>$category <span class='caret'></span></a>";
+			echo "<ul class='dropdown-menu'>";
+			foreach ($value as $subCategory => $link) {
+				echo "<li";
+				if($link == $active){
+					echo " class='active'";
+				}
+				echo "><a href='?v=$link'>$subCategory</a></li>";
+			}
+			echo "</ul></li>";
+		}
+		else {
+			echo "<li role='presentation'";
+			if($active == $value){
+				echo " class='active' ";
+			}
+			echo "><a href='?v=$value'>$category</a></li>";	
+		}
+	}
+ ?>
 </ul>
-
-<!-- Aktivsetzung anhand aktueller Seite setzen (Controller setzt den Wert, ) -->
-<script type="text/javascript">
-	var Idactive = "<?php echo $this->_['active']; ?>"; // TODO: Variable setzen
-	var elem = document.getElementById(Idactive);
-	var parent = elem.parentNode;
-	for (var i = parent.childNodes.length - 1; i >= 0; i--) {
-		parent.childNodes[i].removeClass('active');
-	};
-	elem.addClass('active');
-</script>
