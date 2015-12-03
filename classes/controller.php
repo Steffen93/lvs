@@ -62,15 +62,6 @@ class Controller{
 		return $view;
 	}
 
-	private function initMemberNav($activeNavigation){
-		$navigationOptions = Model::getNavigationOptions();
-		$view = new View();
-		$view->setTemplate('membernav');
-		$view->assign('navigationOptions', $navigationOptions);
-		$view->assign('activeNavigation', $activeNavigation);
-		return $view;
-	}
-
 	private function initBody(){
 		$body = new View();
 		switch($this->template){
@@ -80,7 +71,7 @@ class Controller{
 			
 			case 'members':
 				$body->setTemplate('members');
-				$body->assign('membernav', $this->initMemberNav("members")->loadTemplate());
+				$body->assign('membernav', new Navigation("members")->loadTemplate());
 				break;
 
 			case 'login':
@@ -93,7 +84,7 @@ class Controller{
 				$body->setTemplate('userlist');
 				$body->assign('users', $users);
 				$body->assign('columns', $columns);
-				$body->assign('membernav', $this->initMemberNav("userlist")->loadTemplate());
+				$body->assign('membernav', new Navigation("userlist")->loadTemplate());
 				break;
 
 			case 'home':
