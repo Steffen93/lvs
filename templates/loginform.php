@@ -1,3 +1,1 @@
-<form class="navbar-form navbar-right" method="post" action="?v=login">
-	<button class="btn btn-success" type="submit">Login</button>
-</form>
+<p><a class="btn btn-success" href="?v=login" role="button">Login</a></p>

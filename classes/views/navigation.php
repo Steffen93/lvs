@@ -1,5 +1,4 @@
 <?php
-require_once("view.php");
 
  class Navigation extends View {
 

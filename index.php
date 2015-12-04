@@ -1,16 +1,14 @@
 <?php
 
 // unsere Klassen einbinden
-foreach (glob("classes/*.php") as $filename)
+foreach (glob("classes/*.php") as $class)
 {
-    include_once $filename;
+    include_once $class;
 }
-/*
-include('classes/controller.php');
-include('classes/model.php');
-include('classes/globals.php');
-include('classes/view.php');
-*/
+foreach (glob("classes/views/*.php") as $viewClass)
+{
+    include_once $viewClass;
+}
 
 // $_GET und $_POST zusammenfasen, $_COOKIE interessiert uns nicht.
 $request = array_merge($_GET, $_POST);

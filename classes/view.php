@@ -12,10 +12,9 @@ class View{
 	 */
 	private $_ = array();
 
-	public function __construct(){
-		
+	public function __construct($template = 'home'){
+		$this->setTemplate($template);
 	}
-
 	/**
 	 * Ordnet eine Variable einem bestimmten Schl&uuml;ssel zu.
 	 *
@@ -33,7 +32,7 @@ class View{
 	 * @param String $template Name des Templates.
 	 */
 	public function setTemplate($template = 'home'){
-		$this->template = $template;
+		$this->template = strtolower($template);
 	}
 
 
