@@ -5,8 +5,20 @@
 
 <form class="form-register" method="POST" action="assets/register.php" >
   <div class="form-group">
+    <label for="inputFirstName">Vorname</label>
+    <input type="text" class="form-control" name="firstName" id="inputFirstName" placeholder="Vorname" required>
+  </div>
+  <div class="form-group">
+    <label for="inputLastName">Nachname</label>
+    <input type="text" class="form-control" name="lastName" id="inputLastName" placeholder="Nachname" required>
+  </div>
+  <div class="form-group">
     <label for="inputEmail">E-Mail Adresse</label>
     <input type="email" class="form-control" name="email" id="inputEmail" placeholder="E-Mail" required>
+  </div>
+  <div class="form-group">
+    <label for="inputBirthDate">Geburtsdatum</label>
+    <input type="date" class="form-control" name="birthDate" id="inputBirthDate" placeholder="Geburtsdatum" required>
   </div>
   <div class="form-group has-feedback">
     <label for="inputPassword">Passwort</label>
