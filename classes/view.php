@@ -12,6 +12,10 @@ class View{
 	 */
 	private $_ = array();
 
+	public function __construct(){
+		
+	}
+
 	/**
 	 * Ordnet eine Variable einem bestimmten Schl&uuml;ssel zu.
 	 *

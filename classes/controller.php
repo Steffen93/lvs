@@ -71,7 +71,7 @@ class Controller{
 			
 			case 'members':
 				$body->setTemplate('members');
-				$body->assign('membernav', new Navigation("members")->loadTemplate());
+				$body->assign('membernav', (new Navigation("members"))->loadTemplate());
 				break;
 
 			case 'login':
@@ -84,7 +84,7 @@ class Controller{
 				$body->setTemplate('userlist');
 				$body->assign('users', $users);
 				$body->assign('columns', $columns);
-				$body->assign('membernav', new Navigation("userlist")->loadTemplate());
+				$body->assign('membernav', (new Navigation("userlist"))->loadTemplate());
 				break;
 
 			case 'home':

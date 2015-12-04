@@ -3,7 +3,7 @@
 // unsere Klassen einbinden
 foreach (glob("classes/*.php") as $filename)
 {
-    include $filename;
+    include_once $filename;
 }
 /*
 include('classes/controller.php');
